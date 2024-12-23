@@ -1,0 +1,151 @@
+// // // plugins {
+// // //     id "com.android.application"
+// // //     id "kotlin-android"
+// // //     id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle плагини Android ва Kotlin плагинларидан кейин қўлланиши керак
+// // // }
+
+// // // android {
+// // //     namespace = "com.example.onalik_baxti" // Лойиҳага мувофиқ namespace
+// // //     compileSdk = 34 // compileSdkVersion 34 билан ишлатиш
+// // //     ndkVersion = "25.2.9519653" // Agar kerak bo'lsa to'g'ri versiyani aniqlang
+
+// // //     defaultConfig {
+// // //         applicationId "com.example.onalik_baxti"
+// // //         minSdk = 21 // Қуйи версияларга мос келиши учун
+// // //         targetSdk = 34 // Мақсадли Android версияси
+// // //         versionCode = 1
+// // //         versionName = "1.0"
+// // //     }
+
+// // //     compileOptions {
+// // //         sourceCompatibility = JavaVersion.VERSION_1_8
+// // //         targetCompatibility = JavaVersion.VERSION_1_8
+// // //     }
+
+// // //     kotlinOptions {
+// // //         jvmTarget = "1.8"
+// // //     }
+
+// // //     buildTypes {
+// // //         release {
+// // //             minifyEnabled false // Агар ProGuard қўлланилса, буни тўғрилаш керак
+// // //             signingConfig signingConfigs.debug // Тайёрлаш учун debug қўллаш
+// // //         }
+// // //     }
+// // // }
+
+// // // flutter {
+// // //     source = "../.." // Лойиҳа папкаси ичидаги Flutter манбасини кўрсатиш
+// // // }
+
+// plugins {
+//     id "com.android.application"
+//     id "kotlin-android"
+//     id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle плагини Android ва Kotlin плагинларидан кейин қўлланиши керак
+// }
+
+// android {
+//     namespace = "com.example.onalik_baxti" // Лойиҳага мувофиқ namespace
+//     compileSdk = 34 // compileSdkVersion 34 билан ишлатиш
+//     ndkVersion = "25.2.9519653" // Агар керак бўлса тўғри версияни аниқланг
+
+//     defaultConfig {
+//         applicationId "com.example.onalik_baxti"
+//         minSdk = 21 // Қуйи версияларга мос келиши учун
+//         targetSdk = 34 // Мақсадли Android версияси
+//         versionCode = 1
+//         versionName = "1.0"
+//     }
+
+//     compileOptions {
+//         sourceCompatibility = JavaVersion.VERSION_1_8
+//         targetCompatibility = JavaVersion.VERSION_1_8
+//     }
+
+//     kotlinOptions {
+//         jvmTarget = "1.8"
+//     }
+
+//     buildTypes {
+//         release {
+//             minifyEnabled false // Агар ProGuard қўлланилса, буни тўғрилаш керак
+//             signingConfig signingConfigs.debug // Тайёрлаш учун debug қўллаш
+//         }
+//     }
+// }
+
+// flutter {
+//     source = "../.." // Лойиҳа папкаси ичидаги Flutter манбасини кўрсатиш
+// }
+
+// dependencies {
+//     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//     implementation "androidx.core:core-ktx:1.10.1" // AndroidX асосий кутубхоналари
+//     implementation "com.google.android.material:material:1.9.0" // Material Components
+//     implementation "androidx.appcompat:appcompat:1.6.1" // AppCompat кутубхонаси
+//     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1" // Lifecycle
+// }
+
+
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle плагини Android ва Kotlin плагинларидан кейин қўлланиши керак
+}
+
+android {
+    namespace = "com.example.onalik_baxti" // Лойиҳага мувофиқ namespace
+    compileSdk = 34 // compileSdkVersion 34 билан ишлатиш
+    ndkVersion = "25.2.9519653" // Агар керак бўлса тўғри версияни аниқланг
+
+    defaultConfig {
+        applicationId "com.example.onalik_baxti"
+        minSdkVersion 23 // `minSdkVersion` ўрнига тўғри формат
+        targetSdkVersion 34 // `targetSdkVersion` формати ҳам тўғри бўлиши керак
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    signingConfigs {
+        release {
+            storeFile file('C:/Users/user/my-release-key.jks') // Сертификат файлининг тўлиқ йўли
+            storePassword '916931414' // Сертификат пароли
+            keyAlias 'my-key-alias' // Алиас номи
+            keyPassword '916931414' // Алиас пароли
+        }
+    }
+    buildTypes {
+        release {
+            // shrinkResources фаоллаштириш учун minifyEnabled ҳам true бўлиши керак
+            minifyEnabled true 
+            shrinkResources true // Агар сиз уни ўчирмоқчи бўлсангиз, true ўрнига false қилинг
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+flutter {
+    source = "../.." // Лойиҳа папкаси ичидаги Flutter манбасини кўрсатиш
+}
+
+dependencies {
+    // implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    // implementation 'com.google.firebase:firebase-analytics'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0" // Kotlin версиясини тўғри аниқлаш
+    implementation "androidx.core:core-ktx:1.10.1" // AndroidX асосий кутубхоналари
+    implementation "com.google.android.material:material:1.9.0" // Material Components
+    implementation "androidx.appcompat:appcompat:1.6.1" // AppCompat кутубхонаси
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1" // Lifecycle
+}
+
+apply plugin: 'com.google.gms.google-services'
+
