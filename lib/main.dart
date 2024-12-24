@@ -117,9 +117,9 @@ class LanguageSelectionScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           InkWell(
-            onTap: () => _launchURL('https://t.me/Yakubjonov_X'),
+            onTap: () => _launchURL('https://t.me/doctorYakubjonov'),
             child: Text(
-              'Loyiha muallifi: doctorYakubjonov',
+              'Loyiha hamkori: doctorYakubjonov',
               style: TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
             ),
           ),
