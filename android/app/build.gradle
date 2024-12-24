@@ -95,12 +95,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.onalik_baxti" // Лойиҳага мувофиқ namespace
+    namespace = "com.onalik_baxti" // Лойиҳага мувофиқ namespace
     compileSdk = 34 // compileSdkVersion 34 билан ишлатиш
     ndkVersion = "25.2.9519653" // Агар керак бўлса тўғри версияни аниқланг
 
     defaultConfig {
-        applicationId "com.example.onalik_baxti"
+        applicationId "com.onalik_baxti"
         minSdkVersion 23 // `minSdkVersion` ўрнига тўғри формат
         targetSdkVersion 34 // `targetSdkVersion` формати ҳам тўғри бўлиши керак
         versionCode 1

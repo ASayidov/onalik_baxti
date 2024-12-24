@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.onalik_baxti">
+    package="com.onalik_baxti">
 
      <!-- Интернет рухсатини қўшинг -->
     <uses-permission android:name="android.permission.INTERNET" />
